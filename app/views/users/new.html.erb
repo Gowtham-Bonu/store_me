@@ -1,0 +1,48 @@
+<div class="card container">
+  <div class="card-body">
+    <%= form_with model: @user do |form| %>
+      <div class="mb-3">
+        <%= form.label :name, {class: "form-label"} %>
+        <%= form.text_field :name, {class: "form-control", placeholder: "Title"} %>
+        <div>
+          <% @user.errors.full_messages_for(:name).each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :age, {class: "form-label"} %>
+        <%= form.number_field :age, {class: "form-control", placeholder: "email"} %>
+        <div>
+          <% @user.errors.full_messages_for(:age).each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :email, {class: "form-label"} %>
+        <%= form.email_field :email, {class: "form-control", placeholder: "email"} %>
+        <div>
+          <% @user.errors.full_messages_for(:email).each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :avatar, {class: "form-label"} %><br>
+        <%= form.file_field :avatar, direct_upload: true  %>
+        <div>
+          <% @user.errors.full_messages_for(:avatar).each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      </div>
+
+      <%= form.submit %>
+
+    <% end %>
+  </div>
+</div>

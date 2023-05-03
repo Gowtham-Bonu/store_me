@@ -1,0 +1,8 @@
+<div class="profile card" style="width: 18rem;">
+  <%= image_tag @user.avatar %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @user.name %></h5>
+    <p><%= @user.email %></p>
+  </div>
+<%= link_to "back", root_path %>
+</div>

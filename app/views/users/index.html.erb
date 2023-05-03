@@ -1,0 +1,21 @@
+<%= link_to "create a new user", new_user_path, class: "part" %>
+<table class="table table-dark table-striped" >
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Avatar</th>
+    </tr>  
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, user_path(user) %></td>
+        <td><%= user.age %></td>
+        <td><%= user.email %></td>
+        <td><%= image_tag user.avatar.variant(:thumb) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
