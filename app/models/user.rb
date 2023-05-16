@@ -1,12 +1,12 @@
 class User < ApplicationRecord
-  has_one_attached :avatar do |attachable|
-    attachable.variant :thumb, resize_to_limit: [100, 100]
-  end
-
   validates :name, :age, :email, presence: true
   validates :age, numericality: true
   validates :email, uniqueness: true
   validate :valid_avatar
+
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize_to_limit: [100, 100]
+  end
 
   private
 

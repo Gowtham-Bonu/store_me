@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice: "you have successfully created a user!"
     else
-      flash.now[:alert] = "user has not been created!"
+      flash.now[:alert] = [@user.errors.full_messages].join(", ")
       render :new, status: :unprocessable_entity
     end
   end
