@@ -13,7 +13,7 @@
 
       <div class="mb-3">
         <%= form.label :age, {class: "form-label"} %>
-        <%= form.number_field :age, {class: "form-control", placeholder: "email"} %>
+        <%= form.number_field :age, {class: "form-control", placeholder: "age"} %>
         <div>
           <% @user.errors.full_messages_for(:age).each do |error| %>
             <p><%= error %></p>
